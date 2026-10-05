@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de juegos que buscas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">PÁGINA DE JUEGOS QUE BUSCAS</div>
+    <nav>
+      <a href="#inicio">Inicio</a>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="content">
+        <p class="tag">TU PORTAL GAMING</p>
+        <h1>Página de<br><span>juegos que buscas</span></h1>
+        <p class="description">
+          Encontrá rápidamente las webs de tus juegos favoritos.
+        </p>
+
+        <div class="buttons">
+          <a class="game-button gta" href="https://playgta5.com/" data-game="GTA V WEB">
+            <span>01</span>
+            <strong>GTA V WEB</strong>
+            <b>→</b>
+          </a>
+
+          <a class="game-button pes" href="https://pes6.optijuegos.net/" data-game="PES 6 WEB">
+            <span>02</span>
+            <strong>PES 6 WEB</strong>
+            <b>→</b>
+          </a>
+
+          <a class="game-button cs" href="https://play-cs.com/es/" data-game="CSGO WEB">
+            <span>03</span>
+            <strong>CSGO WEB</strong>
+            <b>→</b>
+          </a>
+        </div>
+      </div>
+
+      <div class="visual">
+        <div class="circle circle-one"></div>
+        <div class="circle circle-two"></div>
+        <div class="cross cross-one">+</div>
+        <div class="cross cross-two">+</div>
+        <div class="controller">⌁</div>
+        <div class="visual-text">GAME<br>HUB</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>PÁGINA DE JUEGOS QUE BUSCAS</span>
+    <span>INICIO</span>
+  </footer>
+<script>
+const root = document.body;
+document.addEventListener("pointermove", (event) => {
+  root.style.setProperty("--mx", event.clientX + "px");
+  root.style.setProperty("--my", event.clientY + "px");
+});
+document.querySelectorAll(".game-button").forEach((button) => {
+  button.addEventListener("click", () => {
+    button.animate(
+      [
+        { transform: "translateX(12px) scale(1.025)" },
+        { transform: "translateX(12px) scale(.97)" },
+        { transform: "translateX(12px) scale(1.025)" }
+      ],
+      { duration: 260, easing: "ease-out" }
+    );
+  });
+});
+</script>
+</body>
+</html>
